@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoruichi Shihōin | Character Archive</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #0b0911;
+    --card: #171320;
+    --purple: #a879ff;
+    --gold: #d9b978;
+    --text: #f4efff;
+    --muted: #aaa1b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, sans-serif;
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    background: rgba(11,9,17,.92);
+    border-bottom: 1px solid #30243e;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-family: Cinzel, serif;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+.hero {
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 75% 50%, #55337a55, transparent 60%),
+      linear-gradient(110deg, #0b0911 40%, #21142e);
+}
+
+.hero-content {
+    width: 55%;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: Cinzel, serif;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.12;
+    color: white;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero p {
+    color: #c5bbd1;
+    line-height: 1.8;
+    max-width: 500px;
+    font-size: 15px;
+}
+
+.hero-image {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    width: 43%;
+    height: 95%;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 0 40px #a879ff33);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 26px;
+    background: linear-gradient(120deg, #8b5ad0, #b18aff);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px #a879ff44;
+}
+
+section {
+    padding: 95px 10%;
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-family: Cinzel, serif;
+    font-size: clamp(27px, 4vw, 40px);
+    margin-bottom: 35px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.biography p {
+    color: #c0b8cc;
+    line-height: 1.95;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #20182b, #120f19);
+    border: 1px solid #49375d;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 15px 45px #0003;
+}
+
+.info-card h3 {
+    font-family: Cinzel, serif;
+    color: var(--gold);
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #ffffff13;
+    padding: 13px 0;
+    font-size: 12px;
+}
+
+.info-row span:first-child {
+    color: var(--muted);
+}
+
+.info-row span:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+.powers {
+    background: linear-gradient(180deg, #100d17, #171020);
+}
+
+.power-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.power-card {
+    background: #1b1524;
+    border: 1px solid #362746;
+    border-radius: 10px;
+    padding: 28px;
+    transition: .35s;
+}
+
+.power-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--purple);
+    box-shadow: 0 10px 35px #a879ff19;
+}
+
+.power-number {
+    color: var(--gold);
+    font-family: Cinzel, serif;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.power-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.power-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid #382b48;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-item p {
+    padding: 16px;
+    color: var(--gold);
+    font-family: Cinzel, serif;
+    font-size: 14px;
+}
+
+.quote {
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center, #40245a66, transparent 65%),
+        #100d17;
+    padding: 90px 15%;
+}
+
+.quote blockquote {
+    font-family: Cinzel, serif;
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.6;
+    color: #e2d0ff;
+}
+
+footer {
+    border-top: 1px solid #30243e;
+    text-align: center;
+    padding: 30px;
+    color: #80768e;
+    font-size: 12px;
+}
+
+@media(max-width: 800px) {
+    nav {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 650px;
+        align-items: flex-start;
+        padding: 70px 7%;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 75%;
+        height: 53%;
+        right: 0;
+        opacity: .55;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .power-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">YORUICHI</div>
+    <div>
+        <a href="#about">Биография</a>
+        <a href="#powers">Способности</a>
+        <a href="#gallery">Галерея</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">BLEACH · CHARACTER ARCHIVE</div>
+        <h1>Yoruichi<br><span>Shihōin</span></h1>
+        <p>
+            Богиня молнии. Бывшая капитан 2-го отряда.
+            Мастер Шунко и одна из самых известных
+            обладательниц невероятной скорости
+            в Soul Society.
+        </p>
+        <a class="button" href="#about">ИЗУЧИТЬ БИОГРАФИЮ</a>
+    </div>
+
+    <img class="hero-image"
+         src="images/X9rZ4alLTyNHxV7EUBx4mha65ajH3uGsWRBfLxTjgvCwxqHoti-yuEcFR-ynmAbCf9QRhf5JLKIbNjfA6Crrg2J61IOolbscWwotavHNokG9e54El8y9FvaH603wkEWNtQ78wmYKm-GdvqCSvmVURTBu83YL6M-XVk9pjjP_d5HU7ySBIPEQgxMGbjzbwenS-removeb.png"
+         alt="Йоруичи Сихоин">
+</header>
+
+<section id="about">
+    <div class="section-label">01 / CHARACTER PROFILE</div>
+    <h2>Биография</h2>
+
+    <div class="about-grid">
+        <div class="biography">
+
+<p>
+    Йоруичи Сихоин — одна из наиболее известных и
+    необычных представительниц Общества душ во
+    вселенной Bleach. Она родилась в семье Сихоин,
+    одном из четырёх великих дворянских кланов
+    Общества душ, и стала 22-й главой этого
+    благородного рода. Несмотря на своё высокое
+    происхождение, Йоруичи никогда не стремилась
+    жить исключительно по строгим дворянским
+    традициям.
+</p>
+
+<p>
+    С ранних лет она обладала исключительными
+    способностями и проходила серьёзную подготовку.
+    Благодаря своим талантам Йоруичи добилась
+    выдающихся результатов в боевых искусствах,
+    технике Сюнпо и руководстве военными
+    подразделениями. Впоследствии она стала
+    капитаном 2-го отряда Готей 13 и одновременно
+    командиром корпуса тайных операций
+    Онмицукидō. Такое сочетание должностей
+    подчёркивало её исключительное положение
+    в военной структуре Общества душ.
+</p>
+
+<p>
+    Одним из наиболее значимых периодов её жизни
+    стало знакомство и тесная дружба с Кисукэ
+    Урахарой. Их отношения строились на взаимном
+    доверии, многолетнем знакомстве и своеобразном
+    чувстве юмора. Йоруичи часто поддразнивала
+    Урахару, однако за их непринуждённым общением
+    скрывалась глубокая привязанность и готовность
+    поддержать друг друга в сложных ситуациях.
+</p>
+
+<p>
+    Особое место в прошлом Йоруичи занимает Сой
+    Фон. В период руководства Онмицукидō Йоруичи
+    была её непосредственным начальником.
+    Сой Фон восхищалась ею, стремилась заслужить
+    её признание и считала своим идеалом.
+    Однако внезапный уход Йоруичи из Общества душ
+    стал для Сой Фон тяжёлым потрясением.
+    Впоследствии их отношения приобрели
+    противоречивый характер, в котором
+    переплелись обида, уважение и привязанность.
+</p>
+
+<p>
+    Около ста лет до основных событий Bleach
+    Йоруичи покинула Общество душ. Это произошло
+    после трагического инцидента, связанного
+    с экспериментами над синигами и последующим
+    обвинением Кисукэ Урахары. Йоруичи помогла
+    Урахаре и другим пострадавшим покинуть
+    Общество душ, тем самым отказавшись от
+    своего высокого положения и прежней жизни.
+    Позднее она обосновалась в мире живых.
+</p>
+
+<p>
+    Несмотря на отсутствие официального
+    положения в Готей 13, Йоруичи продолжила
+    играть важную роль в событиях, связанных
+    с Обществом душ. Она помогала Ичиго Куросаки
+    и его друзьям, используя свои знания
+    о мире синигами, боевые навыки и связи
+    с влиятельными личностями.
+</p>
+
+<p>
+    Йоруичи известна прежде всего невероятной
+    скоростью. Её мастерство Сюнпо настолько
+    велико, что она получила прозвище
+    «Богиня молнии». Однако скорость —
+    далеко не единственное её преимущество.
+    Она является выдающимся мастером Хакуда,
+    искусства рукопашного боя, и способна
+    эффективно сражаться даже без использования
+    меча.
+</p>
+
+<p>
+    Ещё одной отличительной особенностью
+    Йоруичи является владение Сюнко —
+    боевой техникой, сочетающей Хакуда
+    и Кидо. Она окружает тело пользователя
+    мощной духовной энергией, значительно
+    усиливая физические атаки. Йоруичи
+    считается одним из наиболее искусных
+    пользователей этой техники, а её
+    собственный стиль демонстрирует
+    уникальное сочетание скорости,
+    силы и контроля над духовной энергией.
+</p>
+
+<p>
+    Вне боя Йоруичи обладает совершенно
+    другим характером. Она общительна,
+    уверена в себе, любит шутить и часто
+    намеренно смущает окружающих.
+    Её непринуждённое поведение резко
+    контрастирует с её аристократическим
+    происхождением и серьёзными военными
+    обязанностями в прошлом.
+</p>
+
+<p>
+    Особую известность получила её способность
+    превращаться в чёрную кошку. В таком
+    облике Йоруичи может передвигаться
+    незаметно и скрывать свою настоящую
+    личность. При этом она сохраняет
+    способность разговаривать, хотя
+    её голос в кошачьей форме звучит
+    иначе. Эта особенность не раз становилась
+    источником комичных ситуаций.
+</p>
+
+<p>
+    За внешней беззаботностью Йоруичи
+    скрываются ответственность, проницательность
+    и сильная преданность близким людям.
+    Она умеет сохранять спокойствие
+    в опасных ситуациях, быстро анализирует
+    обстановку и принимает решения,
+    руководствуясь собственным опытом.
+    Именно сочетание выдающихся боевых
+    способностей, независимого характера
+    и преданности делает её одной
+    из самых запоминающихся героинь Bleach.
+</p>
+
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Основная информация</h3>
+
+            <div class="info-row">
+                <span>Полное имя</span>
+                <span>Йоруичи Сихоин</span>
+            </div>
+
+            <div class="info-row">
+                <span>Вселенная</span>
+                <span>Bleach</span>
+            </div>
+
+            <div class="info-row">
+                <span>Раса</span>
+                <span>Синигами</span>
+            </div>
+
+            <div class="info-row">
+                <span>Происхождение</span>
+                <span>Клан Сихоин</span>
+            </div>
+
+            <div class="info-row">
+                <span>Бывшая должность</span>
+                <span>Капитан 2-го отряда</span>
+            </div>
+
+            <div class="info-row">
+                <span>Специализация</span>
+                <span>Хакуда, Сюнпо, Сюнко</span>
+            </div>
+
+            <div class="info-row">
+                <span>Прозвище</span>
+                <span>Богиня молнии</span>
+            </div>
+
+            <div class="info-row">
+                <span>День рождения</span>
+                <span>1 января</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="powers" id="powers">
+    <div class="section-label">02 / COMBAT ABILITIES</div>
+    <h2>Способности</h2>
+
+    <div class="power-grid">
+        <div class="power-card">
+            <div class="power-number">01</div>
+            <h3>Сюнпо</h3>
+            <p>
+                Искусство высокоскоростного перемещения.
+                Йоруичи считается одним из величайших
+                мастеров Сюнпо.
+            </p>
+        </div>
+
+        <div class="power-card">
+            <div class="power-number">02</div>
+            <h3>Сюнко</h3>
+            <p>
+                Техника, сочетающая Хакуда и Кидо.
+                Окружает тело пользователя мощной
+                духовной энергией.
+            </p>
+        </div>
+
+        <div class="power-card">
+            <div class="power-number">03</div>
+            <h3>Хакуда</h3>
+            <p>
+                Рукопашный бой. Йоруичи использует
+                удары, скорость и точность
+                для эффективного сражения.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="section-label">03 / VISUAL ARCHIVE</div>
+    <h2>Галерея</h2>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/2e69bd650be4cce9c9cfe19473d5bb39.webp"
+                 alt="Портрет Йоруичи">
+            <p>Портрет</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/G9gd8Lg-KklcqhDA6xThGhn61DSLRntHck-i7nkeJSDMn8_2z_r_gOUXr70FjjJ_YTQrfyg19rV6OiODzOlKFYTNBUzZCxcGV0k13loqsPkWaHBJso524r0EgBA3yOiREtfl2sLMrBbz1O9VVTif4oMIazrcRyBit-Ba7rLuShHqgss3gxZpeLBWKD-Uy1ab.jpg"
+                 alt="Йоруичи в бою">
+            <p>Боевой стиль</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/9d35fce2b35e7a9752e01078a19dcfa4.jpg"
+                 alt="Йоруичи в облике кошки">
+            <p>Кошачья форма</p>
+        </div>
+    </div>
+</section>
+
+<div class="quote">
+    <blockquote>
+        «Свобода — это возможность
+        быть собой».
+    </blockquote>
+</div>
+
+<footer>
+    BLEACH FAN PROJECT · YORUICHI SHIHŌIN
+    <br><br>
+    Неофициальный фан-сайт. Все права на
+    оригинальные материалы принадлежат их владельцам.
+</footer>
+
+</body>
+</html>
